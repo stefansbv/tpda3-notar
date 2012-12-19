@@ -1,0 +1,17 @@
+siruta_tip
+tip;denumire
+40;Judeţ, municipiul Bucureşti
+1;Municipiu reşedinţă de judeţ, municipiul Bucureşti
+2;Oraş ce aparţine de judeţ, altele decât reşedinţa de judeţ
+3;Comună
+4;Municipiu, altele decât reşedinţa de judeţ
+5;Oraş reşedinţă de judeţ
+6;Sectoarele municipiului Bucureşti
+9;Localitate componentă, reşedinţă de municipiu
+10;Alte localităţi ale municipiului
+11;Sat ce aparţine de municipiu
+17;Localitate componentă reşedinţă a oraşului
+18;Localităţi componente ale oraşului altele decât reşedinţa de oraş
+19;Sate subordonate unui oraş
+22;Sat reşedinţă de comună
+23;Sat ce aparţine de comună, altele decât reşedinţa de comună

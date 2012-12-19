@@ -1,0 +1,8 @@
+codificari
+variabila;cod;denumire;descriere
+mod_dob_ob;VC;vânzare-cumpărare;vânzare-cumpărare
+mod_dob_ob;D;donație;donație
+mod_dob_ob;S;schimb;schimb
+mod_dob_ob;M;moștenire;moștenire
+tip_ob;A;Apartament;Apartament
+tip_ob;I;Imobil;Imobil

@@ -1,0 +1,8 @@
+# tpda3
+# Database connection configuration
+---
+connection:
+  driver: postgresql
+  host:   localhost
+  dbname: notar
+  port:   5432

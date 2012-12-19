@@ -1,0 +1,262 @@
+% +---------------------------------------------------------------------------+
+% | Model contract de vânzare cumpărare imobil                                |
+% |                                                                           |
+% | Copyright (c) 2011-2012 by Ștefan Suciu.                                  |
+% | All Rights Reserved.                                                      |
+% |                                                                           |
+% | Version: 0.2                                                              |
+% | uses enumitem, alnumsec packages                                          |
+% +---------------------------------------------------------------------------+
+
+\documentclass[a4paper,10pt]{article}
+\usepackage[left=3cm, right=3cm]{geometry}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[romanian,english]{babel}
+\usepackage{relsize}                   % to be able to add the comma under sStT
+%\usepackage{textcomp}                 % for degree and some others
+%\usepackage{eurosym}                  % for euro symbol
+%\usepackage[T1]{fontenc}              % for the german double quotations
+\usepackage{enumitem}
+\usepackage{alnumsec}                  % section with Roman char
+\alnumsecstyle{Ral}
+
+% Modifica fontul sectiunilor
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\itshape}
+
+\newcommand{\stereotype}[1]{
+  \guillemotleft {#1}\guillemotright
+}
+
+%\newcommand*\sectfont{\sffamily\mdseries}
+%\renewcommand*\sectfont{\rmfamily\mdseries\itshape}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{\bfseries S2I2 - Braşov}
+\chead{}
+\rhead{\footnotesize Document demonstrativ generat din aplicaţia Tpda3-Notar}
+\lfoot{www.s2i2.ro}
+\cfoot{Ştefan Suciu}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%% Record:
+%%-----------------------------
+[%- FOREACH key = r.keys %]
+% [% key %] : [% r.$key -%]
+[% END %]
+%%-----------------------------
+%% Usage: r.field
+
+\begin{document}
+
+\begin{center}
+  CONTRACT DE VÂNZARE - CUMPĂRARE
+\end{center}
+
+Încheiat astăzi [% r.data_contr %]
+la Biroul Notarial
+
+%------------------------------
+\section{Părțile contractante}
+%------------------------------
+
+\begin{enumerate}[label=\theenumi.]
+
+[% IF r.tip1 == 'Persoană' %]
+\item Între [% r.numepren1 %], cu domiciliul în [% r.localitatep1 %],
+județul [% r.judetp1 %], [% r.adresap1 %], cod numeric personal [% r.cnp1 %],
+în calitate de \textsc{Vânzător}
+[% END %]
+
+[% IF r.tip1 == 'Firmă' %]
+\item Între [% r.denumire1 %], înscrisă la Registrul Comerţului sub nr.
+[% r.nrregcom1 %], cod unic de înregistrare [% r.cui1 %], cu sediul în
+[% r.localitatef1 %] [% r.adresaf1 %], reprezentată prin
+[% r.repreznume1 %] [% r.reprezfunc1 %], în calitate de \textsc{Vânzător}
+[% END %]
+
+și
+
+[% IF r.tip2 == 'Persoană' %]
+\item Între [% r.numepren2 %], cu domiciliul în [% r.localitatep2 %],
+județul [% r.judetp2 %], [% r.adresap2 %], cod numeric personal [% r.cnp2 %],
+în calitate de \textsc{Cumpărător},
+[% END %]
+
+[% IF r.tip2 == 'Firmă' %]
+\item Între [% r.denumire2 %], înscrisă la Registrul Comerţului sub nr.
+[% r.nrregcom2 %], cod unic de înregistrare [% r.cui2 %], cu sediul în
+[% r.localitatef2 %] [% r.adresaf2 %], reprezentată prin
+[% r.repreznume2 %] [% r.reprezfunc2 %], în calitate de \textsc{Cumpărător},
+[% END %]
+
+au convenit să încheie prezentul contract de vânzare~-~cumpărare, cu
+respectarea următoarelor clauze:
+
+\end{enumerate}
+
+%------------------------------
+\section{Obiectul contractului}
+%------------------------------
+
+\begin{enumerate}[label=Art. \arabic*., leftmargin=*]
+
+\item Transmiterea dreptului de proprietate de către \textsc{Vânzător}
+\textsc{Cumpărătorului} asupra imobilului situat în localitatea
+[% r.loc_ob %], județul [% r.judet_ob %], [% r.adresa_ob %] %]
+compus din: [% r.comp_ob %].
+
+\item Odată cu vânzarea imobilului susmenționat se transmite
+\textsc{Cumpărătorului} și dreptul de proprietate asupra terenului aferent în
+suprafață de [% r.sup_teren_ob %] mp.
+
+\item Imobilul care face obiectul prezentului contract de
+vânzare~-~cumpărare este proprietatea \textsc{Vânzătorului} fiind dobândit
+prin [% r.moddob_ob %] conform [% r.nract_dob_ob %] autentificat la
+[% r.notariat_ob %], dreptul de proprietate fiind înscris în
+Cartea Funciară nr. [% r.cf_nr_ob %] la Judecătoria [% r.judecator_ob %].
+
+\end{enumerate}
+
+%------------------------------
+\section{Prețul contractului}
+%------------------------------
+
+\begin{enumerate}[label=Art. \arabic*., leftmargin=*, resume]
+
+[% USE Words %]
+
+[% IF r.platitanticipat %]
+\item Prețul de vânzare este de [% r.pret_ob %] RON, adică
+[% r.pret_ob | words %], sumă care a fost achitată de către \textsc{Cumpărător}
+\textsc{Vânzătorului} astăzi [% r.data_contr %] la data autentificării
+prezentului contract.
+[% ELSE %]
+\item Prețul de vânzare este de [% r.pret_ob %] RON, adică
+[% r.pret_ob | words %], sumă care se va plăti de către \textsc{Cumpărător} \textsc{Vânzătorului} astfel: [% r.mod_plata_ob %].
+[% END %]
+
+\end{enumerate}
+
+%------------------------------
+\section{Obligațiile părților}
+%------------------------------
+
+\begin{enumerate}[label=Art. \arabic*., leftmargin=*, resume]
+
+\item \textsc{Vânzătorul} se obligă să predea \textsc{Cumpărătorului} imobilul
+care face obiectul prezentului contract, liber, la data de [%r.data_predare %]
+la [% r.loc_predare_ob %].
+
+\item Obligațiile \textsc{Cumpărătorului} sunt următoarele:
+
+\begin{enumerate}[label=\emph{\alph*})]
+
+\item să efectueze plata prețului la data și la locul stabilit de
+\textsc{vânzător} (locul unde se face predarea imobilului);
+
+\item să suporte toate taxele aferente încheierii si autentificării
+prezentului contract;
+
+\end{enumerate}
+
+\end{enumerate}
+
+%------------------------------
+\section{Garanții}
+%------------------------------
+
+\begin{enumerate}[label=Art. \arabic*., leftmargin=*, resume]
+
+\item \textsc{Vânzătorul} declară sub sancțiunea legii penale pentru fals în
+declarații că apartamentul ce se vinde:
+
+\begin{enumerate}[label=\emph{\alph*})]
+
+\item se află în întregime în proprietatea sa, nefiind înstrăinat sub
+nici o forma, vreunei alte persoane, până la data încheierii
+prezentului contract;
+
+\item nu a fost scos din circuitul civil prin trecere în proprietate
+publică, nu este sechestrat și nici urmărit, nu face obiectul
+vreunui litigiu, este liber de orice sarcini, fiind în mod legal și
+continuu în proprietatea și posesia sa, de la data dobândirii și până
+în prezent, garantând pe \textsc{Cumpărător} împotriva oricărei evicțiuni în
+conformitate cu prevederile art. 1337 din Codul civil.
+
+\end{enumerate}
+
+\item \textsc{Cumpărătorul}:
+
+\begin{enumerate}[label=\emph{\alph*})]
+
+\item declară că a luat cunoștință de situația juridică și de fapt a
+apartamentului ca fiind cea arătată mai sus, de \textsc{Vânzător} și știe că nu
+este grevat de sarcini, potrivit extrasului de carte funciară
+nr.~[% r.cf_nr_ob %] din [% r.cf_data_ob %] eliberat de Biroul de
+carte funciara al Judecătoriei [% r.judecator_ob %], ceea ce
+nu-l exonerează pe \textsc{Vânzător} de răspunderea pentru evicțiune;
+
+\item consimte la intabularea dreptului de proprietate asupra
+apartamentului.
+
+\end{enumerate}
+
+\item Taxele și impozitele către stat sunt achitate la zi de către
+\textsc{Vânzător}, astfel cum rezultă din cazierul fiscal
+nr.~[% r.czf_nr_ob %] din [% r.czf_data_ob %] eliberat
+de [% r.czf_elib_ob %], urmând ca de astăzi data autentificării
+prezentului contract să treacă asupra \textsc{Cumpărătorului}, care suportă
+și taxa de timbru, timbrul judiciar și onorariul notarului public.
+
+\item Transmiterea dreptului de proprietate asupra imobilului
+susmenționat are loc astăzi data autentificării prezentului contract,
+fără îndeplinirea altei formalități, totodată efectuându-se predarea
+către \textsc{Cumpărător} a actelor de proprietate în original.
+
+\end{enumerate}
+
+%------------------------------
+\section{Alte clauze}
+%------------------------------
+
+\begin{enumerate}[label=Art. \arabic*., leftmargin=*, resume]
+
+\item \textsc{Vânzătorul} consimte la intabularea dreptului de proprietate pe
+numele \textsc{Cumpărătorului}, autorizându-l, în mod expres, să îndeplinească
+formalitățile necesare pentru efectuarea tuturor operațiilor de
+publicitate imobiliară.
+
+Redactat de [% r.redactatde %] si editat/multiplicat în trei exemplare.
+
+\end{enumerate}
+
+\vspace{0.2in}
+
+\begin{tabular*}{0.90\textwidth}{@{\extracolsep{\fill}} l r }
+  %\hline
+  \textsc{Vânzător} & \textsc{Cumpărător}\\
+  \hline
+  & \\
+  [% IF r.tip1 == 'Persoană' %]
+  [% r.numepren1 %]
+  [% ELSIF r.tip1 == 'Firmă' %]
+  [% r.repreznume1 %]
+  [% END %]
+  &
+  [% IF r.tip2 == 'Persoană' %]
+  [% r.numepren2 %]
+  [% ELSIF r.tip2 == 'Firmă' %]
+  [% r.repreznume2 %]
+  [% END %]
+\end{tabular*}
+
+%------------------------------
+\end{document}
+
+%% End - template

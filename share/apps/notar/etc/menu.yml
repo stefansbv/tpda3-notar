@@ -1,0 +1,46 @@
+# tpda3
+# Application menu interface configuration
+# Don't change, unless you know what you are doing!
+---
+appmenubar:
+  menu_user:
+    id:    1001
+    label: Notar
+    underline: 0
+    popup:
+      1:
+        name: Persoane
+        label: Persoane fizice
+        underline: 11
+        sep: none
+        key: ~
+      2:
+        name: Firme
+        label: Persoane juridice
+        underline: 0
+        sep: none
+        key: ~
+      3:
+        name: Contracte
+        label: Contracte vânzare-cumpărare imobil
+        underline: 1
+        sep: before
+        key: ~
+
+  menu_dict:
+    id:    1002
+    label: Dictionare
+    underline: 0
+    popup:
+      1:
+        name: Personal
+        label: Listă personal
+        underline: 9
+        sep: after
+        key: ~
+      2:
+        name: Siruta
+        label: Localități (siruta)
+        underline: 0
+        sep: none
+        key: ~
