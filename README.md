@@ -10,27 +10,46 @@ GNU General Public License v3
 This is a Tpda3 application.
 
 Version:  0.16
-Language: romanian
+Language: Romanian
 
 Description:
-
-
-Installation
-------------
-
-Set DBI_USER and DBI_PASS environment vars before test.
-
-% perl Makefile.PL
-% make
-% make test
-% make install
 
 
 Requirements
 ------------
 
 - Perl v5.8.9 or newer.
-- RDBMS:  PostgreSQL version 8.2 or greater
+- PostgreSQL version 8.2 or greater
+- Tpda3
+
+Installation
+------------
+
+Create a PostgreSQL database for the application.  As a convenience,
+the dbrecreate.sh bash script can be used to create a test database on
+localhost, but must be edited first.  Set at least the user and
+password.
+
+Set DBI_USER and DBI_PASS environment vars before test.
+
+Install Tpda3 if not installed yet.
+
+Install Tpda3-Notar with:
+
+----------------------------------------------------------------------
+% tar xaf Tpda3-Notar-0.XX.tar.gz
+% cd Tpda3-Notar-0.XX
+% perl Makefile.PL
+% make
+% make test
+% make install
+----------------------------------------------------------------------
+
+Run for the first time to populate the configuration dir.
+
+----------------------------------------------------------------------
+% tpda3 notar
+----------------------------------------------------------------------
 
 
 License And Copyright

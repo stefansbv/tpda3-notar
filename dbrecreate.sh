@@ -1,9 +1,8 @@
 #!/bin/bash
 
+# Variables
 DB=notar
-SHP="-s localhost"
-#SHP="-s ds -po 5454"
-USER=stefan
+USER=user
 PASS=secret
 
 createdb -U postgres -O $USER -T template0 -E UTF8 $DB
