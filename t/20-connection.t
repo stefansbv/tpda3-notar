@@ -19,7 +19,7 @@ my $args = {
     pass   => undef,
 };
 
-$args->{pass} = $ENV{DBI_PASSWORD} unless defined $args->{pass};
+$args->{pass} = $ENV{DBI_PASS} unless defined $args->{pass};
 
 my $c1 = Tpda3::Config->instance($args);
 ok( $c1->isa('Tpda3::Config'), 'created Tpda3::Config instance 1' );

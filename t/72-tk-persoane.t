@@ -16,7 +16,7 @@ my $args = {
 };
 
 $args->{user} = $ENV{DBI_USER} unless defined $args->{user};
-$args->{pass} = $ENV{DBI_PASSWORD} unless defined $args->{pass};
+$args->{pass} = $ENV{DBI_PASS} unless defined $args->{pass};
 
 test_screen($args, 'Tpda3::Tk::App::Notar::Persoane');
 
