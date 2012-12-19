@@ -31,3 +31,4 @@
 ^errors.txt$
 \.tar.gz$
 \.zip$
+^README.html$
