@@ -36,20 +36,20 @@ Install Tpda3 if not installed yet.
 
 Install Tpda3-Notar with:
 
-----------------------------------------------------------------------
+<pre>
 % tar xaf Tpda3-Notar-0.XX.tar.gz
 % cd Tpda3-Notar-0.XX
 % perl Makefile.PL
 % make
 % make test
 % make install
-----------------------------------------------------------------------
+</pre>
 
 Run for the first time to populate the configuration dir.
 
-----------------------------------------------------------------------
+<pre>
 % tpda3 notar
-----------------------------------------------------------------------
+</pre>
 
 
 License And Copyright
