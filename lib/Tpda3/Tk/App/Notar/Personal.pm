@@ -18,11 +18,11 @@ Tpda3::Tk::App::Notar::Personal screen.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.17
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.17';
 
 =head1 SYNOPSIS
 
