@@ -11,11 +11,11 @@ use warnings;
 
 use inc::Module::Install;
 
-name     'Tpda3-Notar';
-version  '0.16';
-license  'gpl';
-abstract ' ... - Application for the Tpda3 framework';
-author   'Stefan Suciu, <stefansbv at users.sourceforge.net>';
+name 'Tpda3-Notar';
+version_from 'lib/Tpda3/Tk/App/Notar.pm';
+license 'gpl';
+abstract ' Tpda3 Notar';
+author 'Stefan Suciu, <stefan at s2i2.ro>';
 
 requires 'perl'                     => '5.010001';
 

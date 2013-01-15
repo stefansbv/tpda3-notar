@@ -15,10 +15,11 @@ use Tpda3::Config;
 
 my $args = {
     cfname => 'notar',
-    user   => 'stefan',
+    user   => undef,
     pass   => undef,
 };
 
+$args->{user} = $ENV{DBI_USER} unless defined $args->{user};
 $args->{pass} = $ENV{DBI_PASS} unless defined $args->{pass};
 
 my $c1 = Tpda3::Config->instance($args);

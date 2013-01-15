@@ -45,11 +45,37 @@ Install Tpda3-Notar with:
 % make install
 </pre>
 
-Run for the first time to populate the configuration dir.
+Run for the first time to populate the configuration directory.
 
 <pre>
 % tpda3 notar
 </pre>
+
+### Alternative installation
+
+#### GNU/Linux
+
+[Using the custom Citrus Perl distribution](http://sourceforge.net/projects/tpda/files/CitrusPerl-Tpda3/tpda3perl-standard-51402-20903-linux-x86-061.tar.gz/download)
+
+Open a terminal and load the Citrus Perl environment:
+
+<pre>
+% source ~/path/to/Tpda3Perl/bin/citrusvars.sh
+% tar xaf Tpda3-Notar-0.XX.tar.gz
+% cd Tpda3-Notar-0.XX
+% perl Makefile.PL
+% make
+% make test
+% make install
+</pre>
+
+Finally we start the app with:
+
+<pre>
+% tpda3 notar
+</pre>
+
+### Windows
 
 
 License And Copyright
