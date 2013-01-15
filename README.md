@@ -81,10 +81,15 @@ Finally we start the app with:
 
 Unzip the distribution to a folder, for example C:\dev\
 
-Run: C:\dev\Tpda3Perl\bin\citrusterm.bat to open a terminal, then:
+Run: C:\dev\Tpda3Perl\bin\citrusterm.bat to open a terminal, unzip
+Tpda3-Notar-0.XX.zip
 
 <pre>
-% tpda3 notar
+% cd Tpda3-Notar-0.XX
+% perl Makefile.PL
+% make
+% make test
+% make install
 </pre>
 
 License And Copyright
