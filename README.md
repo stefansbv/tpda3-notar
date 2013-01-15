@@ -75,8 +75,17 @@ Finally we start the app with:
 % tpda3 notar
 </pre>
 
-### Windows
+#### Windows
 
+[Using the custom Citrus Perl distribution](http://sourceforge.net/projects/tpda/files/CitrusPerl-Tpda3/tpda3perl-standard-51402-20903-msw-x86-062.zip/download)
+
+Unzip the distribution to a folder, for example C:\dev\
+
+Run: C:\dev\Tpda3Perl\bin\citrusterm.bat to open a terminal, then:
+
+<pre>
+% tpda3 notar
+</pre>
 
 License And Copyright
 ---------------------
