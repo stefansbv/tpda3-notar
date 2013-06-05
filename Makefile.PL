@@ -17,7 +17,8 @@ license 'gpl';
 abstract ' Tpda3 Notar';
 author 'Stefan Suciu, <stefan at s2i2.ro>';
 
-requires 'perl'                     => '5.010001';
+requires 'perl'  => '5.010001';
+requires 'Tpda3' => '0.68';
 
 #- Tk
 requires 'Tk'                       => '804.028';

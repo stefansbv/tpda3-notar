@@ -1026,8 +1026,10 @@ Trigger called from the record load method in Controller.
 sub on_load_record {
     my $self = shift;
 
-    my $vtip1 = $self->{view}->control_read_r( $self->{controls}{tip1} );
-    my $vtip2 = $self->{view}->control_read_r( $self->{controls}{tip2} );
+    my $vtip1
+        = $self->{view}->control_read_r( 'tip1', $self->{controls}{tip1} );
+    my $vtip2
+        = $self->{view}->control_read_r( 'tip2', $self->{controls}{tip2} );
 
     $self->toggle_entries(1, $vtip1);
     $self->toggle_entries(2, $vtip2);
